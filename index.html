@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#000000">
+  <title>Mafia Role Dealer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 1. SETUP -->
+  <section id="setup" class="screen active">
+    <div class="wrap">
+      <h1>Mafia</h1>
+      <p class="sub">Deal secret roles without the card deck.</p>
+
+      <div class="panel">
+        <div class="row">
+          <span class="label">Players</span>
+          <div class="stepper">
+            <button type="button" id="players-minus" aria-label="Fewer players">−</button>
+            <output id="players-out">6</output>
+            <button type="button" id="players-plus" aria-label="More players">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>Roles</h2>
+        <div id="role-rows"></div>
+        <p id="status" class="status"></p>
+      </div>
+
+      <div class="panel">
+        <h2>Round timer</h2>
+        <div class="row">
+          <label class="time-field">
+            <input id="minutes" type="number" min="0" max="99" inputmode="numeric">
+            <span>min</span>
+          </label>
+          <label class="time-field">
+            <input id="seconds" type="number" min="0" max="59" inputmode="numeric">
+            <span>sec</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>Player names</h2>
+        <div id="names"></div>
+      </div>
+
+      <button id="start" class="big-btn" type="button">Start game</button>
+    </div>
+  </section>
+
+  <!-- 2. PASS THE PHONE / REVEAL ROLE -->
+  <section id="deal" class="screen center">
+    <p id="deal-count" class="corner"></p>
+    <div id="deal-content"></div>
+  </section>
+
+  <!-- 3. ROUND TIMER -->
+  <section id="timer" class="screen center">
+    <p id="round-label" class="corner"></p>
+    <div id="clock">0:00</div>
+    <p id="timer-msg" class="timer-msg"></p>
+    <button id="end" class="end-btn" type="button">End game</button>
+  </section>
+
+  <!-- 4. ALL ROLES REVEALED -->
+  <section id="results" class="screen">
+    <div class="wrap">
+      <h1>Roles</h1>
+      <p class="sub">Everyone's secret, revealed.</p>
+      <div id="result-list" class="panel"></div>
+      <button id="again" class="big-btn" type="button">Back to start</button>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
